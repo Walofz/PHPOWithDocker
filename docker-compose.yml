@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+  php:
+    build: ./php
+    container_name: php74
+    restart: always
+    volumes:
+      - ./www:/var/www/html
+      - ./php/php-fpm.conf:/usr/local/etc/php-fpm.conf
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+      - ./logs/php-fpm:/var/log/php-fpm
+      - ./php/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
+    networks:
+      - prod
+    expose:
+      - 9000
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    restart: always
+    volumes:
+      - ./nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/extend.d:/etc/nginx/extend.d:ro
+      - ./logs/nginx:/var/log/nginx
+    volumes_from:
+      - php
+    networks:
+      - prod
+    ports:
+      - 80:80
+
+networks:
+  prod:
+    name: wlan10p
