@@ -10,9 +10,12 @@
 - ldap
 - pgsql
 
-**PHP Config**
+**NGINX Config**
 -
 - base from [NGINX](https://www.digitalocean.com/community/tools/nginx)
+
+**PHP Config**
+-
 - memory_limit = 512M
 - max_execution_time = 600
 
