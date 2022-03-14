@@ -1,6 +1,6 @@
 FROM php:7.4-fpm-bullseye  
 
-LABEL namw="Walofz"
+LABEL name="Walofz"
 
 # Set Timezone
 ENV TZ=Asia/Bangkok
