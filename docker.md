@@ -14,7 +14,7 @@ docker network create -d bridge --opt com.docker.network.bridge.enable_ip_masque
 
 **2. Install Dashboard**
 ```
-docker run -d -p 8000:8000 -p 9443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+docker run -d -p 8000:8000 -p 9001:9001 -p 9443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 ```
 
 **3. Install Docker Compose V.2** (refer : [here](https://docs.docker.com/compose/cli-command/))
