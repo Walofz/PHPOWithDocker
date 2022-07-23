@@ -1,10 +1,10 @@
 **Readme**
 -
-**Nginx + PHP7.4 FPM + Opcache + Extension**
+**Nginx + PHP-FPM + Opcache + Extension**
 
 **PHP PDO Extension** 
 -
-<u>**Base on :: php:7.4-fpm-bullseye**</u>
+<u>**Base on :: php:${latest}-fpm-bullseye**</u>
 - mysql
 - sqlsrv version 5.10.0
 - ldap
