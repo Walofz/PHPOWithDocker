@@ -22,7 +22,7 @@ docker run -d -p 8000:8000 -p 9001:9001 -p 9443:9443 --name=portainer --restart=
 mkdir -p ~/.docker/cli-plugins/
 ```
 ```
-curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
 ```
 ```
 chmod +x ~/.docker/cli-plugins/docker-compose
