@@ -4,7 +4,7 @@
 
 **PHP PDO Extension** 
 -
-<u>**Base on :: php:${latest}-fpm-bullseye**</u>
+**Base on :: walofz/php7.4.x-fpm:lastest**
 - mysql
 - sqlsrv version 5.10.0
 - ldap
@@ -12,7 +12,7 @@
 
 **NGINX Config**
 -
-- base from [NGINX](https://www.digitalocean.com/community/tools/nginx)
+- base from [nginx](https://www.digitalocean.com/community/tools/nginx)
 
 **PHP Config**
 -
