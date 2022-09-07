@@ -3,22 +3,22 @@ version: '3.4'
 services:
   php:
     build: ./php
-    container_name: php74
+    container_name: php74-fpm
     restart: always
     volumes:
       - ./www:/var/www/html
-      - ./php/php-fpm.conf:/usr/local/etc/php-fpm.conf
-      - ./php/php.ini:/usr/local/etc/php/php.ini
-      - ./logs/php-fpm:/var/log/php-fpm
-      - ./php/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
+      - ./php/conf/php-fpm.conf:/usr/local/etc/php-fpm.conf:rw
+      - ./php/conf/php.ini:/usr/local/etc/php/php.ini:rw
+      - ./php/conf/opcache.ini:/var/log/php-fpm:rw
+      - ./logs/php-fpm:/var/log/php-fpm:rw
     networks:
       - prod
     expose:
       - 9000
 
   nginx:
-    image: nginx:stable-alpine
-    container_name: nginx
+    image: nginx:mainline-alpine
+    container_name: nginx-mainline
     restart: always
     volumes:
       - ./nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
@@ -34,4 +34,4 @@ services:
 
 networks:
   prod:
-    name: wlan10p
+    name: wlan10p      
